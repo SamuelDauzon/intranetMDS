@@ -1,3 +1,15 @@
-from django.shortcuts import render
+# Import
+from django.http import HttpResponse, JsonResponse
 
-# Create your views here.
+# View
+def hello(request):
+    print("Bonjour")
+    return HttpResponse("Hello World!")
+    # return JsonResponse(
+    #     {
+    #         'message':'Hello',
+    #         'price': 15.45,
+    #         'available': True,
+    #     }
+    #     )
+
