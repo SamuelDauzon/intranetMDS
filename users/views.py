@@ -1,15 +1,16 @@
 # Import
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
+from django.shortcuts import render
 
 # View
-def hello(request):
-    print("Bonjour")
+def hello_old(request):
     return HttpResponse("Hello World!")
-    # return JsonResponse(
-    #     {
-    #         'message':'Hello',
-    #         'price': 15.45,
-    #         'available': True,
-    #     }
-    #     )
 
+def hello(request):
+    return render(
+        request,
+        'users/hello.html',
+        {
+            'message': "Hello World!",
+        }
+    )
