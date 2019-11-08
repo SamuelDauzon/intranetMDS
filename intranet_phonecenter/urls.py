@@ -1,4 +1,5 @@
 from django.urls import include, path
+from django.conf import settings
 
 import users
 import customer
@@ -13,3 +14,10 @@ urlpatterns = [
     path(r'calls/', include('calls.urls', namespace='calls')),
     path(r'supports/', include('supports.urls', namespace='supports')),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+
+    ] + urlpatterns
