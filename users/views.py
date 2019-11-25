@@ -87,6 +87,14 @@ def login_view(request):
 
 @login_required
 def myaccount(request):
+    print(request.user.user_type)
+
+    if hasattr(request.user, "customer"):
+        print(request.user.customer)
+
+    if hasattr(request.user, "teammember"):
+        print(request.user.teammember)
+
     return render(
         request,
         'users/myaccount.html',
