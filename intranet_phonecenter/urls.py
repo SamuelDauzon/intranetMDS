@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
 
 import users
 import customer
@@ -13,8 +14,6 @@ urlpatterns = [
     path(r'credits/', include('credits.urls', namespace='credits')),
     path(r'calls/', include('calls.urls', namespace='calls')),
     path(r'supports/', include('supports.urls', namespace='supports')),
-
-    path('', users.views.login_view),
 
     path('admin/', admin.site.urls),
 ]
