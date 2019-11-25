@@ -14,7 +14,7 @@ urlpatterns = [
     path('myaccount/', views.myaccount, name="myaccount"),
     path('account-settings/', views.account_settings, name="account_settings"),
     path('role-attribution/', views.role_attribution, name="role_attribution"),
-    path('role-attribution/', views.role_attribution, name="role_attribution"),
+    path('get-username-<int:user_id>/', views.get_username, name="get_username"),
     path(
         'role-attribution-teammember-<int:user_id>/',
         cbv.TeamMemberCreate.as_view(),

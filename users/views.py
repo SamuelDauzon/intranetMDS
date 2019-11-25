@@ -130,6 +130,9 @@ def role_attribution(request):
         }
         )
 
+def get_username(request, user_id):
+    user = UserProfile.objects.get(pk=user_id)
+    return HttpResponse(user.username)
 
 
 
