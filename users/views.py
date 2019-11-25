@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
-from .forms import RegisterForm
+from .forms import RegisterForm, AccountSettingsForm
 
 from .models import UserProfile
 
@@ -84,3 +84,30 @@ def login_view(request):
             'users/login.html',
             {}
         )
+
+@login_required
+def myaccount(request):
+    return render(
+        request,
+        'users/myaccount.html',
+        )
+
+@login_required
+def account_settings(request):
+    if request.method == 'POST':
+        form = AccountSettingsForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+    else:
+        form = AccountSettingsForm(instance=request.user)
+    return render(
+        request,
+        'utils/form.html',
+        {
+            'url_form': reverse("users:register"),
+            'title': "Inscription",
+            'form':form,
+        }
+    )
+
+
