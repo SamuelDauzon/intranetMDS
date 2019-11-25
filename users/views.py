@@ -24,7 +24,7 @@ def hello(request):
 def register(request):
     print(reverse("users:hello"))
     if request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("users:hello"))
+        return HttpResponseRedirect(reverse("users:myaccount"))
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
@@ -38,7 +38,7 @@ def register(request):
             )
             user.save()
             login(request, user)
-            return HttpResponseRedirect(reverse("users:hello"))
+            return HttpResponseRedirect(reverse("users:myaccount"))
     else:
         form = RegisterForm()
     return render(
@@ -59,7 +59,7 @@ def logout_view(request):
 
 def login_view(request):
     if request.user.is_authenticated:
-        return HttpResponseRedirect(reverse("users:hello"))
+        return HttpResponseRedirect(reverse("users:myaccount"))
     elif 'username' in request.POST and 'password' in request.POST:
         username = request.POST['username']
         password = request.POST['password']
@@ -69,7 +69,7 @@ def login_view(request):
             if request.GET.get('next') is not None:
                 return redirect(request.GET['next'])
             else:
-                return HttpResponseRedirect(reverse("users:hello"))
+                return HttpResponseRedirect(reverse("users:myaccount"))
         else:
             return render(
                 request,

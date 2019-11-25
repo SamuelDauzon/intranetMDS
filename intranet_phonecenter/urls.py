@@ -15,6 +15,8 @@ urlpatterns = [
     path(r'calls/', include('calls.urls', namespace='calls')),
     path(r'supports/', include('supports.urls', namespace='supports')),
 
+    path('', users.views.login_view),
+
     path('admin/', admin.site.urls),
 ]
 
