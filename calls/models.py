@@ -97,3 +97,16 @@ class Call(BaseModel):
         verbose_name = "Appel"
         verbose_name_plural = "Appels"
 
+
+class UrlSite(BaseModel):
+
+    url = models.CharField(
+        verbose_name="URL",
+        max_length=4096,
+        )
+
+    available = models.BooleanField(
+        verbose_name = "Disponible",
+        default=False,
+        )
+
