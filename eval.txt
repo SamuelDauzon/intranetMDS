@@ -1,0 +1,19 @@
+
+
+Vous forkez le dépôt https://github.com/SamuelDauzon/intranetMDS. Vous laisser votre dépôt en public. On valide ensemble que j'y accède. Et après chaque fonctionnalité, vous commitez et pusher.
+
+L'évaluation portera sur l'utilisation des fonctionnalités de Django :
+- Utilisation des CBV, ModelForm ou formulaires Django
+- Utilisation des models, urls
+- Qualité de conception et développement
+- La lisibilité du code compte. Un code lisible est un code maintenable.
+- Le front-end compte pour très peu dans l'évaluation, concentrez-vous sur le back-end et l'utilisation de Django.
+
+
+Commit 1 : Créer une page, où le client peut créer un call. Le client ne pourra pas définir le teammember qui restera null.
+Commit 2 : Créer une page où les teammember peuvent venir sélectionner les calls qu'ils souhaitent s'attribuer.
+Commit 3 : Créer une page où le client peut modifier le contenu de ses calls non résolus.
+Commit 4 : Créer une page où le client peut noter sur 10 ses calls résolus et non notés.
+Commit 5 : Afficher sur une page superuser, les calls notés inférieurs à 6 par le client.
+
+
