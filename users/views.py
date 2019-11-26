@@ -112,7 +112,6 @@ def account_settings(request):
         request,
         'utils/form.html',
         {
-            'url_form': reverse("users:register"),
             'title': "Inscription",
             'form':form,
         }
