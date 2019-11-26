@@ -87,7 +87,6 @@ def login_view(request):
 
 @login_required
 def myaccount(request):
-    print(request.user.user_type)
 
     if hasattr(request.user, "customer"):
         print(request.user.customer)

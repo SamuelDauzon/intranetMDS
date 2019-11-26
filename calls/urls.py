@@ -13,10 +13,9 @@ urlpatterns = [
     path('call_edit-<int:call_id>/', views.call_edit, name="call_edit"),
     path(
         'call_delete-<int:pk>/',
-        cbv.CallDeleteView.as_view(
-
-
-           ),
-        name="call_delete"
-        ),
+        cbv.CallDeleteView.as_view(),
+        name="call_delete"),
+    path('call_edit_customer-<int:call_id>/', views.call_edit_customer, name="call_edit_customer"),
+    path('new_call_customer/', views.new_call_customer, name="new_call_customer"),
+    path('call_list_no_teammember/', views.call_list_no_teammember, name="call_list_no_teammember"),
 ]

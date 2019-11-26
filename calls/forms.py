@@ -14,3 +14,21 @@ class NewCallForm(ModelFormWithSubmit):
     class Meta:
         model = Call
         fields = ('title', 'call_category', 'customer', 'tags', 'content', 'solved', )
+
+class NewCustomerCallForm(NewCallForm):
+
+    class Meta:
+        model = Call
+        fields = ('title', 'call_category', 'tags', 'content', )
+
+class CustomerCallEditForm(ModelFormWithSubmit):
+
+    class Meta:
+        model = Call
+        fields = ('content', )
+
+class CallEditTeammemberForm(ModelFormWithSubmit):
+
+    class Meta:
+        model = Call
+        fields = ('teammember', )
